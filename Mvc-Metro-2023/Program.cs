@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Mvc_Metro_2023.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,7 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<MetroDbContext>();
+builder.Services.AddDbContext<MetroDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("MyConn1")));
+
+
 
 var app = builder.Build();
 
