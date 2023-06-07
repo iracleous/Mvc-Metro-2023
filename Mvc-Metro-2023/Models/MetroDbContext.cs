@@ -8,7 +8,8 @@ namespace Mvc_Metro_2023.Models
         public DbSet<Person>? Persons { get; set; }
         public DbSet<Category>? Categories { get; set; }
 
-        public MetroDbContext(DbContextOptions<MetroDbContext> options) : base(options)
+        public MetroDbContext(DbContextOptions<MetroDbContext> options) 
+            : base(options)
         { }
 
 
